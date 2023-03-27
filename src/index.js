@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Home from './Home';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes} from "react-router-dom";
+import Login from './Login';
+import Memories from './Memories';
+import ToDoLibrary from './ToDoLibrary';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <Routes>
+        <Route exact path = "/" element={<Home />}></Route>
+
+        <Route path = "/todos" element={<ToDoLibrary/>}></Route>
+
+        <Route path = "/login" element={<Login/>}></Route>
+
+        <Route path="/memories" element={<Memories/>}></Route>
+
+    </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

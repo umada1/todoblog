@@ -1,0 +1,57 @@
+:root {
+    --moody-blue: #274177fe ;
+    --pale-moody-blue: #99b4edfe;
+    --light-moody-blue: #3f62abfe;
+    --dark-moody-blue: #15264c;
+    --transparent-moody-blue-1: #274077ba;
+    --transparent-moody-blue-2: #2740778a;
+    --transparent-moody-blue-3: #2740773d;
+    --white: #e9edf6fe;
+    --sage: #00ffb36f;
+    --violet: #7f00fe70;
+    --water: #004cff60;
+    
+  }
+
+.nav{
+    height: 5rem;
+    padding: 15px;
+}
+.navelements{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.linkbutton{
+    text-decoration: none;
+    margin: 15px;  
+    font-family:"monaco";
+    color: var(--moody-blue);
+    transition: color 1s ease-in-out;
+}
+
+.linkbutton:hover{
+    color:var(--dark-moody-blue);
+    transition: color 1s ease-in-out;
+}
+
+#memories.linkbutton:hover{
+    filter: drop-shadow(10px -10px 0 var(--violet));
+}
+
+#logout.linkbutton:hover{
+    filter: drop-shadow(10px 10px 0 var(--sage));
+}
+
+#todos.linkbutton:hover{
+    filter: drop-shadow(-10px 5px 0 var(--water));
+
+}
+
+
+.linkbutton:active{
+    color: var(--moody-blue);
+}
