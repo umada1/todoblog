@@ -1,24 +1,43 @@
 
 .single_memo{
-    font-family: "Permanent Marker";
-    height: 270px;
-    width: 360px;
-    background-color: rgb(251, 248, 248);
-    margin: 20px;
-    padding: 20px;
-    display: flex;
+    font-family: "Nothing you could do";
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 25em;
+    height: auto;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: rgba(250, 235, 215, 0.167);
+    color: #000000;
 }
 
 .title_photo{
-    width: 10%;
+  width: 20rem;
   height: auto;
+  margin-right: 0px auto;
+  margin-left: 0px auto;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border: 15px solid rgb(255, 255, 254);
+  box-shadow: 3px 4px 7px 0px rgb(33 33 33 / 20%);
 }
 
 
 .title_name{
     justify-self: flex-end;
+    margin-bottom: 20px;
+}
+
+.memory_note{
+  white-space: normal;
+  text-align: center;
+  text-decoration:underline 0.5px;
+  text-underline-offset: 5px;
+  overflow-wrap: normal;
+  width: 500px;
+  word-wrap: normal;
 }
 
 // https://fonts.googleapis.com/css?family=Permanent+Marker
@@ -28,5 +47,13 @@
     font-style: normal;
     font-weight: 400;
     src: url(https://fonts.gstatic.com/s/permanentmarker/v16/Fh4uPib9Iyv2ucM6pGQMWimMp004La2Cf5b6jlg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: 'Nothing You Could Do';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/nothingyoucoulddo/v15/oY1B8fbBpaP5OX3DtrRYf_Q2BPB1SnfZb3OOnVsH2pmp.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
