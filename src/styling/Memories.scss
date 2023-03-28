@@ -1,7 +1,22 @@
+:root {
+    --moody-blue: #274177fe ;
+    --pale-moody-blue: #99b4edfe;
+    --light-moody-blue: #3f62abfe;
+    --dark-moody-blue: #15264c;
+    --transparent-moody-blue-1: #274077ba;
+    --transparent-moody-blue-2: #2740778a;
+    --transparent-moody-blue-3: #2740773d;
+    --white: #e9edf6fe;
+    --sage: #00ffb36f;
+    --violet: #7f00fe70;
+    --water: #004cff60;
+    
+  }
 
 .holder{
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 95%;
+    margin: 0px auto;
 }
 
 .memory_board{
@@ -12,17 +27,19 @@
     white-space: nowrap;
     width: 100%;
     height: 80%;
-    transition: 2s cubic-bezier(0, 0.38, 0.38, 0.94);
+    flex-direction: column;
+    transition: 1.5s cubic-bezier(0, 0.38, 0.38, 0.94);
 }
 
 .memory_carousel{
     flex: 3;
     display:flex;
+    margin-left: 5px;
     flex-direction: column;
     flex-wrap: wrap;
     overflow: hidden;
     width: 500px;
-    height: 700px;
+    height: 600px;
     justify-content: center;
 }
 
@@ -33,4 +50,41 @@
 
 .side_panel{
     flex: 1;
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline_bar{
+    width: 10em;
+    height: 35em;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.active_label{
+    display: flex;
+}
+
+.icon{
+    margin: 6px;
+    color: var(--dark-moody-blue);
+}
+
+#small.icon{
+    font-size: x-small;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2em;
+    font-family:"monaco";
+    font-size: x-small;
+    font-weight: lighter;
 }
