@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareFull as regularSquare} from "@fortawesome/free-regular-svg-icons";
 import { faSquareFull as fullSquare} from "@fortawesome/free-solid-svg-icons";
 import { faCircle as regularCircle } from "@fortawesome/free-regular-svg-icons";
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 
 function DonesLibrary() {
@@ -25,20 +26,27 @@ function DonesLibrary() {
         // setInterval and clearInterval are used to make the panels shift automatically
         const interval = setInterval(() => {
             if(!pause){
-                changeSlide()}
+                changeSlide()
+                setSelectedPic(0)
+            }
             }
             , 3000 );
         return () => clearInterval(interval)
     });
 
+    const handleSlideChange = (i) => {
+        setActive(i);
+        setSelectedPic(0);
+    }
+
     // temporary item list
 
     const items = [
-        {name: "Birthday", date: "2022-02-13", note:"Not getting younger, unsurprisingly. Long way to go. Long way to go. Long way to go.", pictures: ['/Users/ugneadamo/todoblog/src/stock.jpg', '/Users/ugneadamo/todoblog/src/heyyyy.jpg', '/Users/ugneadamo/todoblog/src/giiiirl.jpg']},
-        {name: "Anniversary", date: "2022-04-11", note:"Can't believe it's been six weeks. Happy anniversary babe", pictures: ['/Users/ugneadamo/todoblog/src/stock.jpg', '/Users/ugneadamo/todoblog/src/stock.jpg']}, 
-        {name: "Cats birthday", date: "2022-12-11", note:"Mr Headbutt is 4 years old today. Congrats!", pictures: ['/Users/ugneadamo/todoblog/src/stock.jpg', '/Users/ugneadamo/todoblog/src/stock.jpg']},
-        {name: "Boyfriend meets cat", date: "2022-12-11", note:"He's always been a cat lover",  pictures: ['/Users/ugneadamo/todoblog/src/stock.jpg', '/Users/ugneadamo/todoblog/src/stock.jpg', '/Users/ugneadamo/todoblog/src/stock.jpg']},
-        {name: "Cat plots boyfriends demise", date: "2022-12-11",note:"The cat really hates him now",  pictures: ['/Users/ugneadamo/todoblog/src/stock.jpg']},
+        {name: "Birthday", date: "2022-02-13", note:"Not getting younger, unsurprisingly. Long way to go. Long way to go. Long way to go.", pictures: ["http://placekitten.com/300/200", 'http://placekitten.com/300/201', 'http://placekitten.com/301/200']},
+        {name: "Anniversary", date: "2022-04-11", note:"Can't believe it's been six weeks. Happy anniversary babe", pictures: ['http://placekitten.com/300/200', 'http://placekitten.com/300/200']}, 
+        {name: "Cats birthday", date: "2022-12-11", note:"Mr Headbutt is 4 years old today. Congrats!", pictures: ['http://placekitten.com//300/200', 'http://placekitten.com//300/200']},
+        {name: "Boyfriend meets cat", date: "2022-12-11", note:"He's always been a cat lover",  pictures: ['http://placekitten.com/300/200', 'http://placekitten.com/300/200', 'http://placekitten.com/300/200']},
+        {name: "Cat plots boyfriends demise", date: "2022-12-11",note:"The cat really hates him now",  pictures: ['http://placekitten.com/300/200']},
         
     ]
 
@@ -55,7 +63,7 @@ function DonesLibrary() {
                     <text className="title"> {item.name} </text>
                     </span>
                     : 
-                    <FontAwesomeIcon className="icon" key = {i} icon={regularSquare} onClick={() => setActive(i)} />
+                    <FontAwesomeIcon className="icon" key = {i} icon={regularSquare} onClick={() => handleSlideChange(i)} />
                         
                 )}
                 </div>
